@@ -9,6 +9,8 @@ jobs:
   a_test_job:
     runs-on: ubuntu-18.04
     steps:
+      - name: The job has succeeded
+        if: ${{ success() }}
       - uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
