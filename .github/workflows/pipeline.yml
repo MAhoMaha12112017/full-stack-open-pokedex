@@ -39,7 +39,14 @@ jobs:
           heroku_email: "ookooko@gmail.com"
           healthcheck: "https://fullstackopenpokedexmatti.herokuapp.com/health"
           checkstring: "ok"
-          rollbackonhealthcheckfailed: truev
+          rollbackonhealthcheckfailed: true
+        if: ${{ success() }}
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,eventName,workflow,took # selectable (default: repo,message)
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
       - uses: actions/checkout@v2
       - name: Bump version and push tag
         if: github.event_name == 'push' && !(contains(github.event.commits.*.message, '#skip'))  # Means merge or push to master (and no #skip)
