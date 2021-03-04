@@ -39,7 +39,7 @@ jobs:
           heroku_email: "ookooko@gmail.com"
           healthcheck: "https://fullstackopenpokedexmatti.herokuapp.com/health"
           checkstring: "ok"
-          rollbackonhealthcheckfailed: truev
+          rollbackonhealthcheckfailed: true
       - uses: actions/checkout@v2
       - name: Bump version and push tag
         if: github.event_name == 'push' && !(contains(github.event.commits.*.message, '#skip'))  # Means merge or push to master (and no #skip)
