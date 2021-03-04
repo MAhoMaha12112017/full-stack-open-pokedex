@@ -3,10 +3,8 @@ name: Hello World!
 on:
   push:
     branches:
-      - joopas
-
-
-
+      - jopo
+      
 jobs:
   a_test_job:
     runs-on: ubuntu-18.04
