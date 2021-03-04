@@ -40,6 +40,7 @@ jobs:
           healthcheck: "https://fullstackopenpokedexmatti.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
+      - name: deploy result
         if: ${{ success() }}
         uses: 8398a7/action-slack@v3
         with:
@@ -58,9 +59,9 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$COMMIT_MESSAGES"
-      - name: onkoskippivaiei
-        env:
-          MESSAGEX:  ${{ !(contains(github.event.commits.*.message, '#skip')) }}
-        if: ${{ !(contains(github.event.commits.*.message, '#skip')) }}
-        run: echo "$MESSAGEX"
+      # - name: onkoskippivaiei
+      #   env:
+      #     MESSAGEX:  ${{ !(contains(github.event.commits.*.message, '#skip')) }}
+      #   if: ${{ !(contains(github.event.commits.*.message, '#skip')) }}
+      #   run: echo "$MESSAGEX"
 
