@@ -1,10 +1,34 @@
-# name: Hello World!
+name: Hello World!
 
-# on:
-#   push:
-#     branches:
-#       - joopas
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Say hello
+        run: |
+          echo "Hello World!"
+        
 
+  now_it_is_job:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Now it is
+        run: |
+          date
+
+  directory_content:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Directory content
+        run: |
+          ls -l
+
+# testing
 # jobs:
 #   a_test_job:
 #     runs-on: ubuntu-18.04
@@ -35,27 +59,3 @@
 #         env:
 #           COMMIT_MESSAGES_contains: ${{ !(contains(github.event.commits.*.message, '#skip')) }} 
 #         run: echo "$COMMIT_MESSAGES_contains"  
-      
-
-# # jobs:
-# #   hello_world_job:
-# #     runs-on: ubuntu-18.04
-# #     steps:
-# #       - name: Say hello
-# #         run: |
-# #           echo "Hello World!"
-        
-
-#   # now_it_is_job:
-#   #   runs-on: ubuntu-18.04
-#   #   steps:
-#   #     - name: Now it is
-#   #       run: |
-#   #         date
-
-#   # directory_content:
-#   #   runs-on: ubuntu-18.04
-#   #   steps:
-#   #     - name: Directory content
-#   #       run: |
-#   #         ls -l
