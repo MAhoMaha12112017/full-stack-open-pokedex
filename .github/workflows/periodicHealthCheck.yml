@@ -1,9 +1,11 @@
 name: Periodic Health check
 
 on:
-  push:
-    branches:
-      [master, perio]
+  schedule:
+    - cron:  '*/10 * * * *'
+  # push:
+  #   branches:
+  #     [master, perio]
 
 jobs:
   a_nonper_job:
