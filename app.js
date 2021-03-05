@@ -8,7 +8,7 @@ app.use(express.static('dist'))
 
 app.get('/health', (req, res) => {
   // res.send('ok'); // testing per health check
-  res.status(400).end();
+  res.status(400).end()
 })
 
 app.get('/version', (req, res) => {
