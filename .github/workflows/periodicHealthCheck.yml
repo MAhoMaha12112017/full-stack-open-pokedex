@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Check the deployed service URL
-      - uses: jtalk/url-health-check-action@v1.4
+        uses: jtalk/url-health-check-action@v1.4
         with:
           # Check the following URL (..s one by one sequentially)
           url: https://fullstackopenpokedexmatti.herokuapp.com/health
