@@ -12,7 +12,7 @@ jobs:
       - name: Check the deployed service URL
         uses: jtalk/url-health-check-action@v1.4
         with:
-          # Check the following URL (..s one by one sequentially)
+          # Check the following URL (..s one by one sequentially)s
           url: https://fullstackopenpokedexmatti.herokuapp.com/health
           # Follow redirects, or just report success on 3xx status codes
           follow-redirect: no # Optional, defaults to "no"
