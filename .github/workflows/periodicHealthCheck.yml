@@ -2,10 +2,7 @@ name: Periodic Health check
 
 on:
   schedule:
-    - cron:  '*/10 * * * *'
-  # push:
-  #   branches:
-  #     [master, perio]
+    - cron:  '0 */2 * * *' # evere 2 hours - at minute 0 past every 2nd hour
 
 jobs:
   a_nonper_job:

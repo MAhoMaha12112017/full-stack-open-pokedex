@@ -45,9 +45,10 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "fullstackopenpokedexmatti" #Must be unique in Heroku
           heroku_email: "ookooko@gmail.com"
-          # healthcheck: "https://fullstackopenpokedexmatti.herokuapp.com/health"
-          # checkstring: "ok"
-          # rollbackonhealthcheckfailed: true
+          # next 3 lines could be commented for health check test
+          healthcheck: "https://fullstackopenpokedexmatti.herokuapp.com/health"
+          checkstring: "ok"
+          rollbackonhealthcheckfailed: true
       - name: deploy result
         if: ${{ success() }}
         uses: 8398a7/action-slack@v3
