@@ -7,8 +7,8 @@ const PORT = process.env.PORT || 5000
 app.use(express.static('dist'))
 
 app.get('/health', (req, res) => {
-  res.send('ok') // comment while health check
-  // res.status(400).end() // uncomment while health check
+  res.send('ok') //comment while health check
+  // res.status(400).end() //uncomment while health check
 })
 
 app.get('/version', (req, res) => {
