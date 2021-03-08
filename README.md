@@ -1,3 +1,6 @@
+# a link of the other repository (as instructed):
+# https://github.com/MAhoMaha12112017/FS2020_palautukset_osa11
+
 # Full Stack open CI/CD
 
 This repository is used for the CI/CD module of the Full stack open course
